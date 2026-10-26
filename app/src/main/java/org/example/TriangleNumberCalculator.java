@@ -18,4 +18,8 @@ public class TriangleNumberCalculator {
     public int subtract(int n, int m) {
         return value(n) - value(m);
     }
+
+    public int multiply(int n, int m) {
+        return value(n) * value(m);
+    }
 }

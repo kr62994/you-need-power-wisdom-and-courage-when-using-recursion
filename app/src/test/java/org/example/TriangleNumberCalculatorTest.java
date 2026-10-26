@@ -36,6 +36,14 @@ public class TriangleNumberCalculatorTest {
     }
 
     @Test
+    void multipliesTriangularNumbers() {
+        assertEquals(1, calculator.multiply(1, 1));
+        assertEquals(18, calculator.multiply(2, 3));
+        assertEquals(30, calculator.multiply(4, 2));
+        assertEquals(30, calculator.multiply(2, 4));
+    }
+
+    @Test
     void acceptsZero() {
         assertEquals(0, calculator.value(0));
         assertEquals(0, calculator.add(0, 0));
@@ -44,6 +52,9 @@ public class TriangleNumberCalculatorTest {
         assertEquals(0, calculator.subtract(0, 0));
         assertEquals(-6, calculator.subtract(0, 3));
         assertEquals(6, calculator.subtract(3, 0));
+        assertEquals(0, calculator.multiply(0, 0));
+        assertEquals(0, calculator.multiply(0, 3));
+        assertEquals(0, calculator.multiply(3, 0));
     }
 
     @Test
@@ -54,5 +65,7 @@ public class TriangleNumberCalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> calculator.add(2, -1));
         assertThrows(IllegalArgumentException.class, () -> calculator.subtract(-1, 2));
         assertThrows(IllegalArgumentException.class, () -> calculator.subtract(2, -1));
+        assertThrows(IllegalArgumentException.class, () -> calculator.multiply(-1, 2));
+        assertThrows(IllegalArgumentException.class, () -> calculator.multiply(2, -1));
     }
 }
