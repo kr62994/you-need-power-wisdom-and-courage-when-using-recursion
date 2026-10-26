@@ -22,4 +22,13 @@ public class TriangleNumberCalculator {
     public int multiply(int n, int m) {
         return value(n) * value(m);
     }
+
+    public double divide(int n, int m) {
+        int numerator = value(n);
+        int denominator = value(m);
+        if (denominator == 0) {
+            throw new ArithmeticException("Cannot divide by zero");
+        }
+        return (double) numerator / denominator;
+    }
 }
